@@ -13,7 +13,6 @@
 
   <ItemGroup>
     <Folder Include="Controllers/Client/Delete/" />
-    <Folder Include="Controllers/Client/Get/" />
     <Folder Include="Controllers/Client/Upsert/" />
   </ItemGroup>
 
