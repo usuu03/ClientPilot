@@ -1,4 +1,6 @@
 using System;
+using Application.Controllers.Client.GetAll;
+using Application.Controllers.Client.Models;
 using Domain;
 using Infrastructure.Data;
 using Microsoft.AspNetCore.Mvc;
@@ -10,10 +12,9 @@ public class ClientController(AppDbContext context) : BaseApiController
 {
     // GET: api/clients
     [HttpGet]
-    public async Task<IActionResult> GetClients()
+    public Task<ClientVm> GetClients()
     {
-        var clients = await context.Clients.ToListAsync();
-        return Ok(clients);
+        return Mediator.Send(new GetAllClientQuery());
     }
 
     // GET: api/clients/{id}

@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "sxZrH6Ucw1g=",
+  "dgSpecHash": "uZMXiauK4XU=",
   "success": true,
   "projectFilePath": "/Users/User/Desktop/ClientPilot/backend/Application/Application.csproj",
   "expectedPackageFiles": [
+    "/Users/User/.nuget/packages/mediatr/12.5.0/mediatr.12.5.0.nupkg.sha512",
+    "/Users/User/.nuget/packages/mediatr.contracts/2.0.1/mediatr.contracts.2.0.1.nupkg.sha512",
     "/Users/User/.nuget/packages/microsoft.data.sqlite.core/9.0.1/microsoft.data.sqlite.core.9.0.1.nupkg.sha512",
     "/Users/User/.nuget/packages/microsoft.entityframeworkcore/9.0.1/microsoft.entityframeworkcore.9.0.1.nupkg.sha512",
     "/Users/User/.nuget/packages/microsoft.entityframeworkcore.abstractions/9.0.1/microsoft.entityframeworkcore.abstractions.9.0.1.nupkg.sha512",

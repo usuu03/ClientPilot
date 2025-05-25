@@ -1,3 +1,5 @@
+using System.Reflection;
+using Application.Controllers.Client.GetAll;
 using Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 
@@ -9,6 +11,14 @@ builder.Services.AddControllers();
 
 builder.Services.AddDbContext<AppDbContext>(opt =>
     opt.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+// Adds the MediatR service to the DI container
+builder.Services.AddMediatR(x =>
+{
+    x.RegisterServicesFromAssemblyContaining<GetAllClientsQueryHandler>();
+    // x.AddOpenBehavior(typeof(ValidationBehaviour<,>));
+});
+
 
 var app = builder.Build();
 
