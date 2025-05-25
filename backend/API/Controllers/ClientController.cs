@@ -1,4 +1,5 @@
 using System;
+using Domain;
 using Infrastructure.Data;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -17,12 +18,19 @@ public class ClientController(AppDbContext context) : BaseApiController
 
     // GET: api/clients/{id}
     [HttpGet("{id}")]
-    public async Task<IActionResult> GetClient(int id)
+    public async Task<ActionResult<Client>> GetActivityDetail(string id)
     {
-        var client = await context.Clients.FindAsync(id);
-        if (client == null) return NotFound();
-        return Ok(client);
-    }
+        if (!Guid.TryParse(id, out var guid))
+            return BadRequest("Invalid GUID format.");
+        var client = await context.Clients.FindAsync(guid);
 
+        if (client == null)
+        {
+            return NotFound();
+        }
+
+        return client;
+    }
+    
 
 }
