@@ -14,6 +14,6 @@ public class ClientConfiguration : IEntityTypeConfiguration<Client>
         builder.Property(c => c.CreatedAt)
             .HasDefaultValueSql("CURRENT_TIMESTAMP")
             .ValueGeneratedOnAdd();
-   }
+    }
 
 }
